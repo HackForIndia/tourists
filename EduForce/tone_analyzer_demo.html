@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/tone_analyzer_demo.js"></script>
+	<title>Tone Analyzer Demo</title>
+</head>
+<body>
+<center>
+<h1>Tone Analyzer Demo</h1>
+
+<br><br>
+<p>This demo shows the usage of Tone Analyzer Watson API</p>
+<p>Usage: It will be used in the assessment of student's theoretical assignments (For eg. Essays).</p>
+<textarea rows="20" cols="50" id="txt">
+Global Warming
+
+One of the biggest problems facing the world today is global warming. Many scientists believe that our production of carbon dioxide and other greenhouse gases is having a heating effect on the atmosphere, and this could be very dangerous for human life. This essay will examine the problem of global warming and suggest some ways of solving the problem.
+
+Many problems could result from global warming. One of the biggest problems is rising sea level. This could result in the flooding of low lying coastal areas and cities, such as Egypt, the Netherlands, and Bangladesh. Some countries might even disappear completely! Another problem caused by global warming is changes in weather patterns. Many areas of the world are experiencing increased hurricanes, floods, and other unusual weather. A third problem associated with global warming is the effect on animals. Fish populations could be affected, while some insects which spread disease might become more common.
+
+There are several things we can do to solve the problem of global warming. One solution is to stop producing C02. We can do this by switching from oil, coal and gas to renewable energy. Another solution is to plant more trees. Trees absorb carbon dioxide and produce oxygen, which is not a greenhouse gas. A third solution is to use less energy and to recycle more products. Generating electricity is one of the main sources of carbon dioxide. If we use less electricity, we will produce less C02.
+
+In conclusion, if we make small changes now in the way we live, we can avoid huge changes in the future. Scientists, governments and individuals must work together to overcome this threat.
+</textarea><br><br>
+<div id="loading"></div>
+<button onclick="txt();" id="btn" >Calculate</button>
+<div id="response"></div>
+</center>
+</body>
+</html>

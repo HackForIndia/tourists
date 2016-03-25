@@ -1,0 +1,29 @@
+Curl Commands - These Commands were used to retrieve necesaary parameters for Rank
+and Retrieve API and to train the model.
+
+
+curl -X POST -u "e0ee7f7e-ac79-4ac5-8f80-e1eb23c154be":"jmmzXVafESmq" "https://gateway.watsonplatform.net/retrieve-and-rank/api/v1/solr_clusters" -d "" 
+
+
+curl -u "e0ee7f7e-ac79-4ac5-8f80-e1eb23c154be":"jmmzXVafESmq" "https://gateway.watsonplatform.net/retrieve-and-rank/api/v1/solr_clusters/sc4a7e4201_abb9_41e3_9be5_1435b3552c1b"
+
+
+curl -X POST -H "Content-Type: application/zip" -u "e0ee7f7e-ac79-4ac5-8f80-e1eb23c154be":"jmmzXVafESmq" "https://gateway.watsonplatform.net/retrieve-and-rank/api/v1/solr_clusters/sc4a7e4201_abb9_41e3_9be5_1435b3552c1b/config/example_config" --data-binary @{/path_to_file}/cranfield_solr_config.zip
+
+
+curl -X POST -u "e0ee7f7e-ac79-4ac5-8f80-e1eb23c154be":"jmmzXVafESmq" "https://gateway.watsonplatform.net/retrieve-and-rank/api/v1/solr_clusters/sc4a7e4201_abb9_41e3_9be5_1435b3552c1b/solr/admin/collections" -d "action=CREATE&name=example_collection&collection.configName=example_config"
+
+
+curl -X POST -H "Content-Type: application/json" -u "e0ee7f7e-ac79-4ac5-8f80-e1eb23c154be":"jmmzXVafESmq" "https://gateway.watsonplatform.net/retrieve-and-rank/api/v1/solr_clusters/sc4a7e4201_abb9_41e3_9be5_1435b3552c1b/solr/example_collection/update" --data-binary @{/path_to_file}/cranfield_data.json
+
+
+#Training the model
+
+
+python ./train.py -u e0ee7f7e-ac79-4ac5-8f80-e1eb23c154be:jmmzXVafESmq -i {/path_to_file}/cranfield_gt.csv -c sc4a7e4201_abb9_41e3_9be5_1435b3552c1b -x example_collection -n "example_ranker"
+
+
+Ranker_id - 868fe3x12-rank-228
+
+
+curl -u "e0ee7f7e-ac79-4ac5-8f80-e1eb23c154be":"jmmzXVafESmq" "https://gateway.watsonplatform.net/retrieve-and-rank/api/v1/rankers/{868fe3x12-rank-228}"
